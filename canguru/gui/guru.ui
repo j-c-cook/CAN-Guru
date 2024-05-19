@@ -20,7 +20,7 @@
       <item row="0" column="0" colspan="2">
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_run">
          <attribute name="title">
@@ -70,7 +70,7 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="0">
-           <widget class="QTreeWidget" name="treeWidget">
+           <widget class="QTreeWidget" name="treeWidget_trace">
             <column>
              <property name="text">
               <string>Time</string>
@@ -108,11 +108,6 @@
             </column>
             <column>
              <property name="text">
-              <string>New Column</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
               <string>Data</string>
              </property>
             </column>
@@ -126,21 +121,21 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_7">
           <item row="0" column="0">
-           <widget class="QCheckBox" name="checkBox">
+           <widget class="QCheckBox" name="checkBox_fromFile">
             <property name="text">
              <string>From File</string>
             </property>
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_5">
+           <widget class="QPushButton" name="pushButton_getFiles">
             <property name="text">
              <string>Get Files</string>
             </property>
            </widget>
           </item>
           <item row="4" column="0">
-           <widget class="QListWidget" name="listWidget_2"/>
+           <widget class="QListWidget" name="listWidget_files"/>
           </item>
          </layout>
         </widget>
@@ -148,6 +143,18 @@
          <property name="windowTitle">
           <string>Databases</string>
          </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_openDBC">
+            <property name="text">
+             <string>Open CAN Database</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QListWidget" name="listWidget_databases"/>
+          </item>
+         </layout>
         </widget>
         <widget class="QWidget" name="subwindow_filtering">
          <property name="windowTitle">
@@ -169,8 +176,38 @@
      <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave_as"/>
+    <addaction name="actionSave_as_2"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_as_3"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionSave_as_2">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_as_3">
+   <property name="text">
+    <string>Save as</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -13,12 +13,10 @@ class App(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.trace = Trace(self.subwindow_trace)
 
-        self.subwindow_configuration.setWindowTitle("Configuration")
-        self.subwindow_databases.setWindowTitle("Databases")
-
         self.mdiArea.addSubWindow(self.subwindow_trace)
         self.mdiArea.addSubWindow(self.subwindow_configuration)
         self.mdiArea.addSubWindow(self.subwindow_databases)
+        self.mdiArea.addSubWindow(self.subwindow_filtering)
 
 
 def main():
