@@ -1,7 +1,8 @@
 import sys
 
+import canguru
 from gui.guru import Ui_MainWindow
-from canguru import interface
+from canguru.gui import mdi_area, top_tab_widget
 
 from PyQt6 import QtWidgets
 
@@ -12,8 +13,14 @@ class App(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.add_sub_windows()
 
-        self.interface = interface.Interface(self.pushButton_refreshInterfaces, self.comboBox)
+        # Top Tab Widgets
+        self.interface = top_tab_widget.interface.Interface(
+            self.pushButton_refreshInterfaces, self.comboBox)
         self.interface.interface_options.connect(self.interface.update_interface_options)
+
+        # MDI Widgets
+        self.databases = mdi_area.databases.Databases(
+            self.pushButton_openDBC, self.listWidget_databases)
 
     def add_sub_windows(self):
         # pyuic6 *.ui -o *.py does not include this, possibly missing a setting
