@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools >= 67.7"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "canguru"
+dynamic = ["readme", "version"]
+description = "Expert Graphical User Interface for Controller Area Network"
+authors = [{ name = "CAN-Guru contributors" }]
+dependencies = [
+    "PyQt6",
+]
+requires-python = ">=3.8"
+
+[project.scripts]
+canguru_app = "canguru.app:main"
+
+[project.urls]
+homepage = "https://github.com/j-c-cook/CAN-Guru"
+repository = "https://github.com/j-c-cook/CAN-Guru"
+changelog = "https://github.com/j-c-cook/CAN-Guru/blob/develop/CHANGELOG.md"
+
+[tool.setuptools.dynamic]
+readme = { file = "README.md" }
+version = { attr = "canguru.__version__" }
