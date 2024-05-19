@@ -9,6 +9,8 @@ description = "Expert Graphical User Interface for Controller Area Network"
 authors = [{ name = "CAN-Guru contributors" }]
 dependencies = [
     "PyQt6",
+    "cantools",
+    "python-can"
 ]
 requires-python = ">=3.8"
 

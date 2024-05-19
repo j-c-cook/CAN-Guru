@@ -1,0 +1,4 @@
+pyinstaller
+PyQt6
+python-can
+cantools
