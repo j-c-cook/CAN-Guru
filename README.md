@@ -15,7 +15,9 @@ The objective of CAN-Guru is to make interfacing with CAN networks seamless and 
 
 ## How to Use 
 
-`python -m canguru.app`
+**Windows** and **Ubuntu** executables are provided in each release. 
+
+Alternatively, developers can install the package and directly utilize the app script `python -m canguru.app`.
 
 ## License
 
