@@ -29,7 +29,7 @@ class Databases:
 
         self.pushButton.clicked.connect(self.call_open_databases)
 
-        self.databases = []
+        self.dbs = []
 
     def call_open_databases(self):
         file_path = utils.file_dialog(
@@ -47,7 +47,7 @@ class Databases:
         self.reload_databases()
 
     def reload_databases(self):
-        self.databases = []
+        self.dbs = []
         for index in range(self.listWidget.count()):
             item = self.listWidget.item(index)
 
@@ -70,4 +70,4 @@ class Databases:
                 continue
 
             checkbox.setStyleSheet("color: green")
-            self.databases.append(db)
+            self.dbs.append(db)

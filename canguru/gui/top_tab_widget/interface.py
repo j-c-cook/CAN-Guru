@@ -44,3 +44,11 @@ class Interface(QThread):
 
         for interface in available_interfaces:
             self.interface_options.emit(f'{interface["interface"]}: {interface["channel"]}')
+
+    def get(self):
+        interface_text = self.comboBox.currentText()
+        if interface_text == '':
+            return None, None
+
+        interface_text_split = interface_text.split(':')
+        return interface_text_split[0].strip(), interface_text_split[1].strip()

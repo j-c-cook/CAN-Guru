@@ -1,6 +1,6 @@
 import sys
 
-import canguru
+import canguru.gui.top_tab_widget.run
 from gui.guru import Ui_MainWindow
 from canguru.gui import mdi_area, top_tab_widget
 
@@ -21,6 +21,17 @@ class App(QtWidgets.QMainWindow, Ui_MainWindow):
         # MDI Widgets
         self.databases = mdi_area.databases.Databases(
             self.pushButton_openDBC, self.listWidget_databases)
+        self.trace_thread = mdi_area.trace.Trace(
+            self.treeWidget_trace, self.databases.dbs
+        )
+        self.trace_thread.message.connect(self.trace_thread.add_msg)
+
+        # Top Tab Widgets continued
+        self.run = canguru.gui.top_tab_widget.run.Run(
+            self.interface, self.trace_thread
+        )
+        self.pushButton_start.clicked.connect(self.run.start)
+        self.pushButton_stop.clicked.connect(self.run.stop)
 
     def add_sub_windows(self):
         # pyuic6 *.ui -o *.py does not include this, possibly missing a setting
