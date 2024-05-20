@@ -7,11 +7,11 @@ name = "canguru"
 dynamic = ["readme", "version"]
 description = "Expert Graphical User Interface for Controller Area Network"
 authors = [{ name = "CAN-Guru contributors" }]
-dependencies = [
-    "PyQt6",
-    "cantools",
-    "python-can"
-]
+[dependencies]
+PyQt6 = "~=6.0"
+cantools = "~=39.0"
+python-can = "~=4.0"
+
 requires-python = ">=3.8"
 
 [project.scripts]
