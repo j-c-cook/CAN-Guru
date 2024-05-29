@@ -11,6 +11,18 @@ class App(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(App, self).__init__(parent)
         self.setupUi(self)
+
+        # Manually create the Setup sub window to enable the creation of a custom GLWidget
+        self.subwindow_setup = QtWidgets.QWidget()
+        self.subwindow_setup.setObjectName("subwindow_setup")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.subwindow_setup)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.openGLWidget_setup = mdi_area.setup.SetupOpenGLWidget(parent=self.subwindow_setup)
+        self.openGLWidget_setup.setObjectName("openGLWidget_setup")
+        self.gridLayout_3.addWidget(self.openGLWidget_setup, 0, 0, 1, 1)
+        self.subwindow_setup.setWindowTitle("Setup")
+        self.subwindow_setup.setGeometry(0, 0, 400, 300)
+
         self.add_sub_windows()
 
         # Top Tab Widgets
@@ -38,7 +50,7 @@ class App(QtWidgets.QMainWindow, Ui_MainWindow):
         self.mdiArea.addSubWindow(self.subwindow_trace)
         self.mdiArea.addSubWindow(self.subwindow_configuration)
         self.mdiArea.addSubWindow(self.subwindow_databases)
-        self.mdiArea.addSubWindow(self.subwindow_filtering)
+        self.mdiArea.addSubWindow(self.subwindow_setup)
 
 
 def main():
