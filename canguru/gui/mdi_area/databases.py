@@ -1,7 +1,5 @@
 import os.path
 
-from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import QListWidgetItem, QCheckBox, QWidget, QHBoxLayout, QLabel
 
 from canguru import utils
